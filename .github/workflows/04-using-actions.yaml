@@ -8,6 +8,6 @@ jobs:
             - name: "checkout code"
               uses: Actions/checkout@v6
             - name: "printing folder"
-                run: ls -l
+              run: ls -l
             
 
