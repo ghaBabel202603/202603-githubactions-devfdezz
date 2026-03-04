@@ -1,0 +1,13 @@
+name: 04 -  Uso de Actions
+on: push
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: "checkout code"
+              uses: Actions/checkout@v6
+            - name: "printing folder"
+                run: ls -l
+            
+
