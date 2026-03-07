@@ -12,4 +12,6 @@ jobs:
             - name: "install dependencies"
               working-directory: ./my-app
               run: npm ci              
-
+            - name: "run init test"
+              working-directory: ./my-app
+              run: npm run test
