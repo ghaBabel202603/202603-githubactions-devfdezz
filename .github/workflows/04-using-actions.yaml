@@ -7,7 +7,10 @@ jobs:
         steps:
             - name: "checkout code"
               uses: Actions/checkout@v6
-            - name: "printing folder"
-              run: ls -l
+            - name: "node setup"
+              run: Actions/setup-node@v4
+            - name: "install dependencies"
+              working-directory: ./my-app
+              run: npm ci
             
 
