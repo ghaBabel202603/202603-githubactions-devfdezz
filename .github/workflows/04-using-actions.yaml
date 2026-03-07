@@ -11,6 +11,5 @@ jobs:
               uses: actions/setup-node@v6
             - name: "install dependencies"
               working-directory: ./my-app
-              run: npm ci
-            
+              run: npm ci              
 
