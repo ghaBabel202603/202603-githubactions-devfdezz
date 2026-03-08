@@ -12,9 +12,10 @@ jobs:
     windows-echo:
         runs-on: windows-latest
         steps:
-            - name: "Mostrar so"
+            - name: "Mostrar SO"
+              shell: bash
               run: |
                     echo "Este trabjo se ejecuta en un runner de windows"
                     echo "$RUNNER_OS"
-                    
+
               
