@@ -8,5 +8,13 @@ jobs:
             - name: "Mostrar SO"
               run: | 
                     echo "Este trabajo se ejecuta en runner de ubuntu" 
-                    echo $RUNNER_OS
+                    echo "$RUNNER_OS"
+    windows-echo:
+        runs-on: windows-latest
+        steps:
+            - name: "Mostrar so"
+              run: |
+                    echo "Este trabjo se ejecuta en un runner de windows"
+                    echo "$RUNNER_OS"
+                    
               
