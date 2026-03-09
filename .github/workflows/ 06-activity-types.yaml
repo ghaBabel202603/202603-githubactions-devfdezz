@@ -1,4 +1,4 @@
-name: 06 - Activity Types.
+name: 06 - Activity Types
 on: 
     pull_request: 
         types: [opened, synchronize]
