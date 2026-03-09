@@ -3,3 +3,4 @@ Ejercicios:
  - [Actions](./ejercicios/04-actions.md)
  - [event Filters](./ejercicios/05-eventFilters.md)
  - [Act. Types](./ejercicios/06-activityTypes.md)
+- añadimos una modificación para generar una pull_request en develop, Lo editamos la segunda vez como nos indica en el punto ocho.
