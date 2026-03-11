@@ -4,8 +4,12 @@ jobs:
     echo-data:
         runs-on: ubuntu-latest
         steps:
-            - name: "show info"
+            - name: "show Github Context"
               run: |
-                    echo "Nombre del evento: ${{github.event_name}}"
+                    echo "Event: ${{github.event_name}}"
                     echo "Ref: ${{github.ref}}"
-                    echo "SHA: ${{github.sha}}"
+                    echo "SHA: ${{github.workflow_sha}}"
+                    echo "Actor: ${{github.actor}}"
+                    echo "Workflow: ${{github.workflow}}"
+            - name: "Retrieve Variable"
+                    
