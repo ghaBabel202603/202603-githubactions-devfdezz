@@ -11,5 +11,5 @@ jobs:
                     echo "SHA: ${{github.workflow_sha}}"
                     echo "Actor: ${{github.actor}}"
                     echo "Workflow: ${{github.workflow}}"
-            - name: "Retrieve Variable"
+            #- name: "Retrieve Variable"
                     
