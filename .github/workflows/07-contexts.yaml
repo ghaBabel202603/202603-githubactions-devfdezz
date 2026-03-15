@@ -19,5 +19,4 @@ jobs:
                     echo "Actor: ${{github.actor}}"
                     echo "Workflow: ${{github.workflow}}"
             - name: "Retrieve Variable"
-              run: 'echo "Imprimos el valor de la vatriable añadida en el repositorio: ${{var.MY_VAR}}"'
-                    
+              run: 'echo "Imprimos el valor de la vatriable añadida en el repositorio: ${{vars.MY_VAR}}"'
