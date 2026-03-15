@@ -12,14 +12,14 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: "Print start-up"
-              if: ${{ inputs.debug == 'true' }}
+              if: ${{ inputs.debug }}
               run: |
                     echo "Triggered by: ${{ github_event_name }}"
                     echo "Branch: ${{github_ref_name}}"
                     echo "Commit SHA: ${{ github_sha }}"
                     echo "Runner OS: ${{ runner_os }}"
             - name: "Print when triggered by push"
-              if: ${{ inputs.debug == 'true' }}      
+              if: ${{ inputs.debug == 'true' && github_ref == 'main' }}      
               run: echo "I was triggered from main"      
             - name: "Greeting"
               run: echo "hello world"
