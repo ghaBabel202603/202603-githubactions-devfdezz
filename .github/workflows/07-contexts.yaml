@@ -1,5 +1,5 @@
 name: 07 - Contexts
-runs-name: ${{ inputs.debug && 'DEBUG MODE' || 'Normal Run' }}
+run-name: ${{ inputs.debug && 'DEBUG MODE' || 'Normal Run' }}
 on: 
     push:
     workflow_dispatch:
