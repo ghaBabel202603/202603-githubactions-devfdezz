@@ -1,13 +1,13 @@
 name: 07 - Contexts
 run-name: ${{ inputs.debug && 'DEBUG MODE' || 'Normal Run' }}
 on: 
-    push:
+    #push:
     workflow_dispatch:
-        inputs:
-            debug:
-                description: "debug mode"
-                type: boolean
-                default: false
+    #    inputs:
+    #        debug:
+    #            description: "debug mode"
+    #            type: boolean
+    #            default: false
 jobs:
     echo-data:
         runs-on: ubuntu-latest
