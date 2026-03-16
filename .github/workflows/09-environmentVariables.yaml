@@ -13,10 +13,10 @@ jobs:
             - name: "Print env variables"
               env:
                 STEP_VAR: "I am a step env var"
-                step_var2: "I am another step var"
+                step_var: "I am another step var"
               run: |
                     echo "STEP env var: $STEP_VAR"
-                    echo "STEP env var2: $step_var2"
+                    echo "STEP env var2: $step_var"
                     echo "Job env var: $JOB_VAR"
                     echo "Workflow env var: $WORKFLOW_VAR"
                     echo "Overwritten env var: $OVERWRITTEN"
