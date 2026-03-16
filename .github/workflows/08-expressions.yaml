@@ -4,7 +4,7 @@ on:
     workflow_dispatch:
         inputs:
             debug:
-                description: "podemos ejecutar el workflow a mano en modo debug o sin modo debug"
+                #description: "podemos ejecutar el workflow a mano en modo debug o sin modo debug"
                 type: boolean
                 default: false
 jobs:
