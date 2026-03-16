@@ -1,0 +1,22 @@
+name: 11 - Functions
+on:
+    pull_request:
+    workflow_dispatch:
+jobs:
+    demo:
+        runs-on: ubuntu-latest
+        steps:
+            - name: "Bug step"
+              if: contains(github.event.pull_request.title, "fix")
+              run: "Bug fix detected"  
+            - name: "Falling step"
+              run: exit 1
+            - name: "Run on success"
+              if: success()
+              run: echo "Success step."
+            - name: "Run on failure"
+              if: failure()
+              run: echo "failure step." 
+            - name: "Always step"
+              if: always()
+              run: echo "Always step."
