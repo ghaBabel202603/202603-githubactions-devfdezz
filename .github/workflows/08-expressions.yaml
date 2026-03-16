@@ -1,5 +1,6 @@
 name: 08 - Expressions
-on:
+run-name: 08 - Expressions | DEBUG - ${{ inputs.debug && 'ON' || 'OFF' }} 
+on: 
     push:
     workflow_dispatch:
         inputs:
