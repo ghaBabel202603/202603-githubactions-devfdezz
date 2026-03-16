@@ -1,0 +1,11 @@
+name: 12- Working wirh inputs
+on:
+    workflow_dispatch:
+        dry-run:
+            description: "Skip deployment and only print build output"
+            type: boolean
+            default: false
+        target:
+            type: environment
+            required: true
+jobs:
