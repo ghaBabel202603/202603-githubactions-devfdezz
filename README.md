@@ -13,4 +13,4 @@ Ejercicios:
  - [Outputs](./ejercicios/13-Outputs.md)
 
 
-- probando los test del ejericico once del punto 3 a la que vamos a generar una pull_request hacia main para ver el workflow de este ejercicio. test2, test4 con pull request title contiene fix.
+- probando los test del ejericico once del punto 3 a la que vamos a generar una pull_request hacia main para ver el workflow de este ejercicio. test2, test5 con pull request title contiene fix.
