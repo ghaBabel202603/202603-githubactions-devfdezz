@@ -1,18 +1,18 @@
 name: 08 - Expressions
 on:
-    #push:
-    #workflow_dispatch:
-    #    inputs:
-    #        debug:
-    #            description: "podemos ejecutar el workflow a mano en modo debug o sin modo debug"
-    #            type: boolean
-    #            default: false
+    push:
+    workflow_dispatch:
+        inputs:
+            debug:
+                description: "podemos ejecutar el workflow a mano en modo debug o sin modo debug"
+                type: boolean
+                default: false
 jobs:
     echo:
         runs-on: ubuntu-latest
         steps:
             - name: "Print start-up"
-              if: ${{ inputs.debug }}
+              if: ${{ inputs.debug == 'true' }}
               run: |
                     echo "Triggered by: ${{ github_event_name }}"
                     echo "Branch: ${{github_ref_name}}"
