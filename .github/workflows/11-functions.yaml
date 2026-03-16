@@ -8,7 +8,7 @@ jobs:
         steps:
             - name: "Bug step"
               if: contains(github.event.pull_request.title, 'fix')
-              run: "Bug fix detected"  
+              run: echo "Bug fix detected"  
             - name: "Falling step"
               run: exit 1
             - name: "Run on success"
