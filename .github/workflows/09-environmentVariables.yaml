@@ -14,6 +14,7 @@ jobs:
               env:
                 STEP_VAR: "I am a step env var"
                 step_var2: "I am another step var"
+                OVERWRITTEN: "I have been overwritten at the step level"
               run: |
                     echo "STEP env var: $STEP_VAR"
                     echo "STEP env var2: $step_var2"
