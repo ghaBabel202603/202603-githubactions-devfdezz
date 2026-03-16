@@ -7,7 +7,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: "Bug step"
-              if: contains(github.event.pull_request.title, "fix")
+              if: contains(github.event.pull_request.title, 'fix')
               run: "Bug fix detected"  
             - name: "Falling step"
               run: exit 1
