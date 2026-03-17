@@ -6,6 +6,13 @@ on:
                 description: "Whether to execute cache step"
                 type: boolean
                 default: true
+            node-version:
+              type: choice
+              options:
+                - '18.x'
+                - '20.x'
+                - '24.x'
+              default: '24.x'
 jobs:
     build:
         runs-on: ubuntu-latest
@@ -18,9 +25,17 @@ jobs:
             - name: "Setup Node"
               uses: actions/setup-node@v4
               with:
-                node-version: '24.x'
+                node-version: ${{ inputs.node-version }}
+            - name: "Download cached dependencies"
+              id: cache-node
+              if: ${{ inputs['use-cache'] == 'true' }}
+              uses: action/cache@v3
+              with:
+                key: deps-node-modules-${{ hashFiles('14-caching/my-app/package-lock.json') }}
+                path: 14-caching/my-app/node_modules
             - name: "Install dependencies"  
-              run: echo "ruta:" && pwd && npm ci
+              if: steps.cache-node.outputs.cache-hit != 'true'
+              run: npm ci
             - name: "Testing"
               run: npm run test
             - name: "Building"
