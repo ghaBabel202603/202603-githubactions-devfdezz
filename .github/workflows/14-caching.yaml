@@ -11,7 +11,7 @@ jobs:
         runs-on: ubuntu-latest
         defaults:
             run:
-                working-directory: 14-caching/my-app
+                working-directory: ./14-caching
         steps:
             - name: "Checkout code"
               uses: actions/checkout@v4
