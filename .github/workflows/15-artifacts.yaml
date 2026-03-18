@@ -1,5 +1,9 @@
 name: 15 - Working with artifacts
 on: [workflow_dispatch]
+env:
+  build-artifact-key: app${{ github.sha }}
+  test-coverage-key: test-covarage-${{ github.sha }}
+
 jobs:
     test-build:
         runs-on: ubuntu-latest
@@ -9,28 +13,41 @@ jobs:
         steps:
             - name: "Checkout code"
               uses: actions/checkout@v4
+
             - name: "Setup Node"
               uses: actions/setup-node@v4
               with:
                 node-version: '24.x'
+
             - name: "Download cached dependencies"
               id: cache-node-eje15
               uses: actions/cache@v3
               with:
                 key: deps-node-modules-eje15-${{ hashFiles('15-artifacts/my-app/package-lock.json') }}
                 path: 15-artifacts/my-app/node_modules
+
             - name: "Install dependencies"  
               if: steps.cache-node-eje15.outputs.cache-hit != 'true'
               run: npm ci
+
             - name: "Unit Tests"
-              run: npm run test
+              run: npm run test -- --coverage
+
+            - name: " Upload test results"
+              uses: actions/upload-artifact@v4
+              with:
+                name: ${{ env.test-coverage-key }}
+                path: 15-artifacts/my-app/covarage
+
             - name: "Build code"
               run: npm run build
+
             - name: "Upload build files"
               uses: actions/upload-artifact@v4
               with:
-                name: app
+                name: ${{ env.build-artifact-key }}
                 path: 15-artifacts/my-app
+                
     deploy:
         runs-on: ubuntu-latest
         needs: 
@@ -39,5 +56,5 @@ jobs:
            - name: "Download build files"
              uses: actions/download-artifact@v4
              with:
-               name: app
+               name: ${{ env.build-artifact-key }}
                path: build
