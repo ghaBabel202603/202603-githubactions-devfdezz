@@ -2,7 +2,7 @@ name: 15 - Working with artifacts
 on: [workflow_dispatch]
 env:
   build-artifact-key: app${{ github.sha }}
-  test-coverage-key: test-covarage-${{ github.sha }}
+  test-coverage-key: test-coverage-${{ github.sha }}
 
 jobs:
     test-build:
@@ -37,7 +37,7 @@ jobs:
               uses: actions/upload-artifact@v4
               with:
                 name: ${{ env.test-coverage-key }}
-                path: 15-artifacts/my-app/covarage
+                path: 15-artifacts/my-app/coverage
 
             - name: "Build code"
               run: npm run build
